@@ -14,7 +14,8 @@ class LosantDashboardBlock extends Component {
 					</span>
 				</div>);
 		}
-		const url = `https://app.losant.com/#/block/${dashboardId}/${blockId}?theme=${theme}`;
+		const host = 'https://app.losant.com';
+		const url = `${host}/#/block/${dashboardId}/${blockId}?theme=${theme}`;
 		return (
 			<iframe
 				frameBorder={0}

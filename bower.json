@@ -1,7 +1,7 @@
 {
   "name": "react-losant-dashboard-block",
-  "version": "0.0.0",
-  "description": "Losant Dashboard Block",
+  "version": "1.0.0",
+  "description": "React Losant Dashboard Block",
   "main": "dist/react-losant-dashboard-block.min.js",
   "homepage": "https://github.com/Losant/react-losant-dashboard-block",
   "authors": [
