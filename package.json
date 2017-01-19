@@ -1,6 +1,6 @@
 {
   "name": "react-losant-dashboard-block",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Losant Dashboard Block",
   "main": "lib/LosantDashboardBlock.js",
   "author": "Losant IoT",
