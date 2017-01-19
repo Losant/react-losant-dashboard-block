@@ -29,7 +29,7 @@ npm install react-losant-dashboard-block --save
 
 ## Usage
 
-To use the component, simply import it into your React app and then include the tag in your `render` function.
+To use the component, simply import it into your React app and then include the tag in your `render` function. **Your dashboard must be public in order to use this component.**
 
 ```
 import LosantDashboardBlock 'react-losant-dashboard-block';
@@ -54,6 +54,12 @@ import LosantDashboardBlock 'react-losant-dashboard-block';
 | height      |           | String. The height of the iframe in which the block is rendered. Must be in CSS units (e.g. `400px` or `100%`). | 240px   |
 | theme       |           | String. Must be either `light` or `dark`. Additional themes may be supported at a later time.                   | light   |
 | style       |           | Object. CSS styles that will be applied to the `iframe` tag.                                                    |         |
+
+### Dashboard and Block IDs
+
+Your dashboard must be public in order to use this component. The easiest way to find your dashboardId and blockId is to click the "Embed" icon in the header of your block. This will set your browser's URL to a format like `https://app.losant.com/#/dashboards/:dashboardId?embed=:blockId`.
+
+So, given the URL `https://app.losant.com/#/dashboards/56f0918f2d198e01002b05d4?embed=SyPLQVEe`, the dashboardId would be `56f0918f2d198e01002b05d4` and the blockId would be `SyPLQVEe`.
 
 ## Development (`src`, `lib` and the build process)
 
