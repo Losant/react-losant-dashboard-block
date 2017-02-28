@@ -54,6 +54,7 @@ import LosantDashboardBlock 'react-losant-dashboard-block';
 | height      |           | String. The height of the iframe in which the block is rendered. Must be in CSS units (e.g. `400px` or `100%`). | 240px   |
 | theme       |           | String. Must be either `light` or `dark`. Additional themes may be supported at a later time.                   | light   |
 | style       |           | Object. CSS styles that will be applied to the `iframe` tag.                                                    |         |
+| ctx         |           | Object. Context object for populating variables used throughout the dashboard.                         |         |
 
 ### Dashboard and Block IDs
 

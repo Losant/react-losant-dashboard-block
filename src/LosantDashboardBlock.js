@@ -28,7 +28,7 @@ import React, {Component, PropTypes} from 'react';
 class LosantDashboardBlock extends Component {
 
 	render() {
-		const {dashboardId, blockId, width, height, style, theme} = this.props;
+		const {dashboardId, blockId, width, height, style, theme, ctx} = this.props;
 		if(!dashboardId || !blockId) {
 			return (
 				<div
@@ -38,8 +38,12 @@ class LosantDashboardBlock extends Component {
 					</span>
 				</div>);
 		}
-		const host = 'https://app.losant.com';
-		const url = `${host}/#/block/${dashboardId}/${blockId}?theme=${theme}`;
+		const host = 'https://app.structure.works';
+		let url = `${host}/#/block/${dashboardId}/${blockId}?theme=${theme}`;
+		Object.keys(ctx || {}).forEach((key) => {
+			const val = ctx[key];
+			url+= `&ctx[${key}]=${val}`;
+		});
 		return (
 			<iframe
 				frameBorder={0}
@@ -52,12 +56,13 @@ class LosantDashboardBlock extends Component {
 }
 
 LosantDashboardBlock.propTypes = {
-	dashboardId: PropTypes.string,
 	blockId: PropTypes.string,
-	theme: PropTypes.oneOf(['light','dark']),
+	ctx: PropTypes.object,
+	dashboardId: PropTypes.string,
+	height: PropTypes.string, // CSS units
 	style: PropTypes.object,
+	theme: PropTypes.oneOf(['light','dark']),
 	width: PropTypes.string, // CSS units
-	height: PropTypes.string // CSS units
 };
 
 LosantDashboardBlock.defaultProps = {
