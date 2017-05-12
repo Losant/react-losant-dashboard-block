@@ -38,7 +38,7 @@ class LosantDashboardBlock extends Component {
 					</span>
 				</div>);
 		}
-		const host = 'https://app.structure.works';
+		const host = 'https://app.losant.com';
 		let url = `${host}/#/block/${dashboardId}/${blockId}?theme=${theme}`;
 		Object.keys(ctx || {}).forEach((key) => {
 			const val = ctx[key];

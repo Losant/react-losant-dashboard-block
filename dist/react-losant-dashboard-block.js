@@ -66,6 +66,7 @@ var LosantDashboardBlock = (function (_Component) {
 			var height = _props.height;
 			var style = _props.style;
 			var theme = _props.theme;
+			var ctx = _props.ctx;
 
 			if (!dashboardId || !blockId) {
 				return _react2['default'].createElement(
@@ -92,6 +93,10 @@ var LosantDashboardBlock = (function (_Component) {
 			}
 			var host = 'https://app.losant.com';
 			var url = host + '/#/block/' + dashboardId + '/' + blockId + '?theme=' + theme;
+			Object.keys(ctx || {}).forEach(function (key) {
+				var val = ctx[key];
+				url += '&ctx[' + key + ']=' + val;
+			});
 			return _react2['default'].createElement('iframe', {
 				frameBorder: 0,
 				style: style,
@@ -105,14 +110,15 @@ var LosantDashboardBlock = (function (_Component) {
 })(_react.Component);
 
 LosantDashboardBlock.propTypes = {
-	dashboardId: _react.PropTypes.string,
 	blockId: _react.PropTypes.string,
-	theme: _react.PropTypes.oneOf(['light', 'dark']),
+	ctx: _react.PropTypes.object,
+	dashboardId: _react.PropTypes.string,
+	height: _react.PropTypes.string, // CSS units
 	style: _react.PropTypes.object,
-	width: _react.PropTypes.string, // CSS units
-	height: _react.PropTypes.string // CSS units
-};
+	theme: _react.PropTypes.oneOf(['light', 'dark']),
+	width: _react.PropTypes.string };
 
+// CSS units
 LosantDashboardBlock.defaultProps = {
 	theme: 'light',
 	width: '100%',
